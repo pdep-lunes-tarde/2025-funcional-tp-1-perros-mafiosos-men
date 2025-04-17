@@ -52,13 +52,11 @@ suiteDeTestsDeParteII =
   describe "Parte 2: Temperaturas" $ do
     describe "celsiusAFahrenheit" $ do
       it "pasa una temperatura de celsius a fahrenheit" $ do
-        pendingWith "Reemplacen los implementame con valores de prueba que ustedes elijan. Luego borren esta linea"
-        celsiusAFahrenheit implementame `shouldBeEqualUpTo2Decimals` implementame
+        celsiusAFahrenheit  3`shouldBeEqualUpTo2Decimals` 37.4
 
     describe "fahrenheitACelsius" $ do
       it "pasa una temperatura de fahrenheit a celsius" $ do
-        pendingWith "reemplacen los 'implementame' por valores de prueba que ustedes elijan, luego borren esta linea"
-        fahrenheitACelsius implementame `shouldBeEqualUpTo2Decimals` implementame
+        fahrenheitACelsius 41 `shouldBe` 5
 
     describe "fahrenheitACelsius y celsiusAFahrenheit son inversas" $ do
       it "convertir un valor en celsius a fahrenheit y luego volver a convertir a celsius retorna el valor original" $ do
@@ -70,23 +68,22 @@ suiteDeTestsDeParteII =
     describe "haceFrioCelsius" $ do
       -- Pista: hay 3 casos a testear
       it "Es verdad cuando hacen menos de 8 grados celsius" $ do
-        pendingWith "Escribir el cuerpo de este test"
+        haceFrioCelsius 7 `shouldBe` True
         
-      it "" $ do
-        pendingWith "Escribir un nombre para este test"
+      it "Es verdad cuando hacen 8 grados celsius" $ do
         haceFrioCelsius 8 `shouldBe` True
-      it "" $ do
-        pendingWith "Pensar un caso para este test, escribir el nombre y el cuerpo del mismo"
+        
+      it "Es falso cuando hacen mas de 8 grados celsius" $ do
+        haceFrioCelsius 9 `shouldBe` False
 
     describe "haceFrioFahrenheit" $ do
       -- Pista: hay 3 casos a testear
-      it "" $ do
-        pendingWith "Pensar un caso para este test, escribir el nombre y el cuerpo del mismo"
-      it "" $ do
-        pendingWith "Escribir un nombre para este test"
+      it "Es verdad cuando hacen menos de 46.4 grados celsius" $ do
+        haceFrioFahrenheit 45 `shouldBe` True
+      it "Es verdad cuando hacen 4.4 grados celsius" $ do
         haceFrioFahrenheit 46.4 `shouldBe` True
-      it "" $ do
-        pendingWith "Pensar un caso para este test, escribir el nombre y el cuerpo del mismo"
+      it "Es falso cuando hacen mas de 46.4 grados celsius" $ do
+        haceFrioFahrenheit 48 `shouldBe` True
 
 escribiTestsParaEstaFuncion :: SpecWith ()
 escribiTestsParaEstaFuncion = pure ()
@@ -97,4 +94,4 @@ shouldBeEqualUpTo2Decimals aNumber anotherNumber = shouldBeEqualWithErrorLessTha
 shouldBeEqualWithErrorLessThan :: Number -> Number -> Number -> Expectation       
 shouldBeEqualWithErrorLessThan error aNumber anotherNumber
   | aNumber - anotherNumber < error = pure () -- Esto hace que el test de verde!
-  | otherwise = expectationFailure (show aNumber ++ " no es igual (comparando con error < " ++ show error ++ ") a " ++ show anotherNumber)
+  | otherwise = expectationFailure (show aNumber ++ " no es igual (comparando con error < " ++ show error ++ ") a " ++ show anotherNumber) 

@@ -2,14 +2,14 @@
 
 ## Grupo, nombre y legajo de integrantes
 
-- Nombre del grupo: **Completar**
+- Nombre del grupo: **perros mafiosos men**
 
 Integrantes:
-- Legajo: **Completar** 
-- Nombre: **Completar**
+- Legajo: **222.284-0** 
+- Nombre: **Tomás Durruty**
 
-- Legajo: **Completar** 
-- Nombre: **Completar**
+- Legajo: **225.888-8** 
+- Nombre: **Rafael Pensel**
 
 
 ## Objetivos
